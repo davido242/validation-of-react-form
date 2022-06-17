@@ -1,11 +1,13 @@
 import { useFormik } from "formik";
 import { basicSchema } from "../schema";
+
 const onSubmit = async (values, actions) => {
   console.log(values);
   console.log(actions);
   await new Promise((resolve) => setTimeout(resolve, 1000));
   actions.resetForm();
 };
+
 const SignUp = () => {
   const {
     values,
@@ -27,7 +29,9 @@ const SignUp = () => {
     validationSchema: basicSchema,
     onSubmit,
   });
+
   console.log(errors);
+
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
         <label htmlFor="firstname">First Name</label>
